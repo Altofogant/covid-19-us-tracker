@@ -3,7 +3,6 @@
 
     export async function preload() {
         try {
-            throw new Error('this is bad :(');
             const usStats = await requests.usStats();
             return {usStats};
         } catch(e) {
@@ -31,6 +30,6 @@
     </div>
 </dic>
 
-<CovidStat {usStats}/>
+<CovidStat {...usStats}/>
 <CovidChart />
 <TableContainer />
