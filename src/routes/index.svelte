@@ -30,6 +30,6 @@
     </div>
 </dic>
 
-<CovidStat />
+<CovidStat {usStats}/>
 <CovidChart />
 <TableContainer />
