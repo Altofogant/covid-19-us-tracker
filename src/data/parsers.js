@@ -52,18 +52,19 @@ function parseHistoric(historicData) {
 }
 
 function parseChart(historicData, key, label, color) {
-    const chartData = historicData.map(data => {
-        return {
-            x: moment(data.date, 'YYYMMDD'),
-            y: data[key] || 0,
-        }
-    })
+  const chartData = historicData.map((data) => {
     return {
-        label,
-        data: chartData,
-        fill: false,
-        borderColor: color
-    }
+      x: moment(data.date, 'YYYYMMDD'),
+      y: data[key] || 0,
+    };
+  });
+
+  return {
+    label,
+    data: chartData,
+    fill: false,
+    borderColor: color,
+  };
 }
 
 function parseStats(rawStats) {

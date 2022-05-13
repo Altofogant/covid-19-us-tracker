@@ -1,6 +1,6 @@
 <script>
     import { onMount, onDestroy } from "svelte";
-    import Chart from 'chart.js/auto';
+    import Chart from 'chart.js';
 
     export let historicData;
     export let title;
