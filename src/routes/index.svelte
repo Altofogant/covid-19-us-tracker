@@ -5,7 +5,8 @@
         try {
             const usStats = await requests.usStats();
             const historic = await requests.historicUS();
-            return {usStats, historic};
+            const statesData = await requests.statesData();
+            return {usStats, historic, statesData};
         } catch(e) {
             this.error(500, "There was an error in calling the api, please try again in 5 minutes.");
         }
@@ -19,6 +20,8 @@
 
     export let usStats;
     export let historic;
+    export let statesData;
+    console.log(statesData, 'statesData');
     console.log(historic, 'historicUS');
     console.log(usStats, "usStats")
 </script>
