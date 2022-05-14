@@ -21,9 +21,6 @@
     export let usStats;
     export let historic;
     export let statesData;
-    console.log(statesData, 'statesData');
-    console.log(historic, 'historicUS');
-    console.log(usStats, "usStats")
 </script>
 
 <svelte:head>

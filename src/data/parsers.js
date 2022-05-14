@@ -13,16 +13,16 @@ function stateStats(state, data) {
 }
 
 function stateTable(stateData) {
-  return stateData.map(data => {
-    const { name } = stateNames.find(d => d.abbreviation === data.state);
+  return stateData.map((data) => {
+    const { name } = stateNames.find((d) => d.abbreviation === data.state);
     return {
-      cases: format.number(data.positive),
-      deaths: format.number(data.death),
-      tested: format.number(data.totalTestResults),
-      state: format.number(data.state),
+      cases: data.positive,
+      deaths: data.death,
+      tested: data.totalTestResults,
+      state: data.state,
       fullStateName: name,
-    }
-  })
+    };
+  });
 }
 
 function historicUS(historicData) {

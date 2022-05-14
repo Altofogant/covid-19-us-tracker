@@ -1,5 +1,10 @@
 <script>
+    import format from '../data/format.js';
     export let states;
+
+    function formatNum(number) {
+        return format.number(number);
+    }
 </script>
 
 <style>
@@ -27,18 +32,18 @@
                 {#each states as state (state.state)}
                     <tr>
                         <td>
-                            <a href="state.state">
+                            <a rel="prefetch" href="{state.state}">
                                 {state.fullStateName}
                             </a>
                         </td>
                         <td>
-                            {state.cases}
+                            {formatNum(state.cases)}
                         </td>
                         <td>
-                            {state.deaths}
+                            {formatNum(state.deaths)}
                         </td>
                         <td>
-                            {state.tested}
+                            {formatNum(state.tested)}
                         </td>
                     </tr>
                 {/each}
