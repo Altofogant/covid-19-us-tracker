@@ -32,11 +32,14 @@
             },
             options: {
                 responsive: true,
-                tooltip: {
+                tooltips: {
                     callbacks: {
                         label: function(tooltipItem, data) {
-                            let label = data.datasets[tooltipItem.datasetIndex].label || "";
+                            let label = data.datasets[tooltipItem.datasetIndex].label;
+                            label += ': ';
                             label += tooltipItem.yLabel.toLocaleString();
+
+                            return label;
                         }
                     }
                 },
